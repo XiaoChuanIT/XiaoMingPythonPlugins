@@ -96,7 +96,6 @@ def main():
     chaunwise.close()
     pass
 class ServerThreading(threading.Thread):
-    # words = text2vec.load_lexicon()
     def __init__(self,clientsocket,recvsize=1024*1024,encoding="utf-8"):
         threading.Thread.__init__(self)
         self._socket = clientsocket
