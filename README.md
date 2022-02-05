@@ -19,3 +19,11 @@
 ```bash
 pip install -r requirements.txt
 ```
+## 环境
+请尽可能使用```Python 3.8/3.9/3.10```，最低请不要低于```3.7.3```（```Debian 10```自带），若您尚未安装Python，且连接官网很慢或根本无法连接，不妨试试阿里巴巴的[Python镜像](https://registry.npmmirror.com/binary.html?path=python/)以及[PyPI镜像](https://developer.aliyun.com/mirror/pypi)。
+
+同时，系统版本尽可能选择Linux，尤其推荐```Ubuntu```、```Debian```或```CentOS```，若认为需要使用```Windows```，也请您务必配置好环境。
+
+~~说了这么多，其实更推荐Conda。~~
+
+另外，由于可能会用的OS命令，您所选择的操作系统请务必支持```path```。
