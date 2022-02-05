@@ -70,6 +70,10 @@ async def get_url(url):
 ```
 #### Socket套接字(TCP)
 ```python
+import socket
+import sys
+import threading
+
 def main():
     chaunwise = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     host = "127.0.0.1"
