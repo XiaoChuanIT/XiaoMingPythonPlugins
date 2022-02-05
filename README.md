@@ -38,3 +38,33 @@ pip install -r requirements.txt
 
 ## 指南
 一个插件只能含有一个文件，所以您只能将所有需要的函数定义在文件内，包括但不限于异步HTTP请求、事件响应器，这些**请您都放置在同一个文件内**。
+
+### 快捷代码
+您没有必要全部手搓，部分代码您可以（部分甚至强制您）从此处复制：
+
+#### 异步HTTP GET请求(httpx)
+```python
+import httpx
+
+async def get_url(url):
+    async with httpx.AsyncClient() as client:
+        try:
+            resp = await client.get(url,timeout=300)
+            result = resp.text
+            return result
+        except:
+            return "ヾ(≧へ≦)〃 小明的网络请求出现了故障。
+```
+#### 异步HTTP POST请求(httpx)
+```python
+import httpx
+
+async def get_url(url):
+    async with httpx.AsyncClient() as client:
+        try:
+            resp = await client.post(url,timeout=300)
+            result = resp.text
+            return result
+        except:
+            return "ヾ(≧へ≦)〃 小明的网络请求出现了故障。
+```
