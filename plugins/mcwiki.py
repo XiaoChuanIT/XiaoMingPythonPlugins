@@ -1,9 +1,6 @@
 import httpx
 import json
-import socket
-import sys
-import threading
-
+import asyncio
 global redirect_flag 
 global redirect_from
 global redirect_to
@@ -55,57 +52,11 @@ async def wiki(title):
             return f"ヾ(≧へ≦)〃 小明发生了一些错误，是因为这个页面没有分段落造成的，但已经确认页面存在，链接如下：{link}"
 
 def main():
-    chaunwise = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    host = "127.0.0.1"
-    port = 24826
-    chaunwise.bind((host,port))
-    chaunwise.listen(5)
-    myaddr = chaunwise.getsockname()
-    print("Server adress:%s"%str(myaddr))
-    while True:
-        clientsocket,addr = chaunwise.accept()
-        print("socket adress:%s" % str(addr))
-        try:
-            t = ServerThreading(clientsocket)
-            t.start()
-            pass
-        except Exception as identifier:
-            print(identifier)
-            pass
-        pass
-    chaunwise.close()
-    pass
-class ServerThreading(threading.Thread):
-    # words = text2vec.load_lexicon()
-    def __init__(self,clientsocket,recvsize=1024*1024,encoding="utf-8"):
-        threading.Thread.__init__(self)
-        self._socket = clientsocket
-        self._recvsize = recvsize
-        self._encoding = encoding
-        pass
-    async def run(self):
-        print("thread start.....")
-        try:
-            msg = ''
-            while True:
-                rec = self._socket.recv(self._recvsize)
-                msg += rec.decode(self._encoding)
-                if msg.strip().endswith('CHUANWISE'):
-                    msg=msg[:-9]
-                    break
-            print("accept msg:%s" % str(msg))
-            sendmsg = await wiki(msg)
-            self._socket.send(("%s"%sendmsg).encode(self._encoding))
-            pass
-        except Exception as identifier:
-            self._socket.send("500".encode(self._encoding))
-            print(identifier)
-            pass
-        finally:
-            self._socket.close() 
-        print("thread over.....")
-        pass
-    def __del__(self):
-        pass
+    json_ = input()
+    info = json.loads(json_)
+    title = str(info["title"])
+    msg = asyncio.run(wiki(title))
+    print(msg)
+
 if __name__ == "__main__":
     main()
