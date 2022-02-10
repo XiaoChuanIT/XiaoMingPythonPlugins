@@ -54,7 +54,7 @@ async def wiki(title):
 def main():
     json_ = input()
     info = json.loads(json_)
-    title = str(info["title"])
+    title = str(info["msg"])
     msg = asyncio.run(wiki(title))
     print(msg)
 
