@@ -56,7 +56,8 @@ def main():
     info = json.loads(json_)
     title = str(info["msg"])
     msg = asyncio.run(wiki(title))
-    print(msg)
+    final_msg = {"result":msg}
+    print(final_msg)
 
 if __name__ == "__main__":
     main()
