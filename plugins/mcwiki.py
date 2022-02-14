@@ -52,9 +52,7 @@ async def wiki(title):
             return f"ヾ(≧へ≦)〃 小明发生了一些错误，是因为这个页面没有分段落造成的，但已经确认页面存在，链接如下：{link}"
 
 def main():
-    json_ = input()
-    info = json.loads(json_)
-    title = str(info["msg"])
+    title = input()
     msg = asyncio.run(wiki(title))
     final_msg = {"result":msg}
     print(final_msg)
