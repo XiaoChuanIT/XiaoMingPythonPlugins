@@ -54,8 +54,7 @@ async def wiki(title):
 def main():
     title = input()
     msg = asyncio.run(wiki(title))
-    final_msg = {"result":msg}
-    print(final_msg)
+    print(msg)
 
 if __name__ == "__main__":
     main()
