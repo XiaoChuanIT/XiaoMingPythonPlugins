@@ -31,6 +31,7 @@ pip install httpx
 
 # 标签
 标签的限制使用请见Wiki。
+----------
 ```http``` ```async``` ```wiki```
 
 # 不兼容性
