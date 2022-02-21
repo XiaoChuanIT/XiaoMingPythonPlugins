@@ -28,3 +28,10 @@ pip install httpx
 ## 计划
 
 * 添加对所有Wiki的适配，请参见[MediaWiki](https://mediawiki.org)。
+
+# 标签
+标签的限制使用请见Wiki。
+```http``` ```async``` ```wiki```
+
+# 不兼容性
+* 运行此插件时'''务必不要开启任何代理服务器包括但不限于http和socks5'''，或者手动设置Python使用的代理，但是极不推荐，因为这可能需要多次修改启动参数以指定代理服务器。
