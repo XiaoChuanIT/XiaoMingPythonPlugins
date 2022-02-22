@@ -28,6 +28,8 @@ pip install -r requirements.txt
 
 另外，由于可能会用的OS命令，您所选择的操作系统请务必支持```path```。
 
+如果不支持，请自行迁移操作系统。
+
 # 贡献
 
 ## About us
