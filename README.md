@@ -57,7 +57,7 @@ async def get_url(url):
             result = resp.text
             return result
         except:
-            return "ヾ(≧へ≦)〃 小明的网络请求出现了故障。
+            return "ヾ(≧へ≦)〃 小明的网络请求出现了故障。"
 ```
 #### 异步HTTP POST请求(httpx)
 ```python
@@ -70,5 +70,5 @@ async def get_url(url):
             result = resp.text
             return result
         except:
-            return "ヾ(≧へ≦)〃 小明的网络请求出现了故障。
+            return "ヾ(≧へ≦)〃 小明的网络请求出现了故障。"
 ```
