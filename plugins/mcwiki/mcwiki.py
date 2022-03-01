@@ -2,9 +2,11 @@
 import httpx
 import json
 import asyncio
+
 global redirect_flag 
 global redirect_from
 global redirect_to
+
 async def get_url(url):
     async with httpx.AsyncClient() as client:
         try:
@@ -47,16 +49,15 @@ async def wiki(title):
             all_desc = str(curid_json[curid]["extract"])
             desc = all_desc[:int(all_desc.find("\n\n\n"))]
             if redirect_flag:
-                return f"(๑•̀ㅂ•́)و✧  你的输入不准确哦，已经帮你将{redirect_from}重定向到{redirect_to}啦：\n{link}\n{desc}"
+                return f"ヾ(≧▽≦*)o  你的输入不准确哦，已经帮你将{redirect_from}重定向到{redirect_to}啦：\n{link}\n{desc}"
             else:
-                return f"(๑•̀ㅂ•́)و✧  小明找到啦：\n{link}\n{desc}"
+                return f"ヾ(≧▽≦*)o  小明找到啦：\n{link}\n{desc}"
         except:
             return f"ヾ(≧へ≦)〃 小明发生了一些错误，是因为这个页面没有分段落造成的，但已经确认页面存在，链接如下：{link}"
 
 def main():
     title = input()
     msg = asyncio.run(wiki(title))
-    print(msg)
-
+    print(msg.encode('gbk', 'ignore').decode('gbk'))
 if __name__ == "__main__":
     main()
